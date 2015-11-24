@@ -13,7 +13,6 @@ from haystack.query import EmptySearchQuerySet, SearchQuerySet
 from haystack.utils import get_model_ct
 from haystack.utils.app_loading import haystack_get_model
 
-
 def model_choices(using=DEFAULT_ALIAS):
     choices = [(get_model_ct(m), capfirst(smart_text(m._meta.verbose_name_plural)))
                for m in connections[using].get_unified_index().get_indexed_models()]
